@@ -4,6 +4,8 @@ WORKDIR /app/frontend
 COPY frontend/package*.json ./
 RUN npm install
 COPY frontend/ ./
+# Copy root-level locales (required by frontend/src/i18n/index.js at build time)
+COPY locales/ /app/locales/
 RUN npm run build
 
 # Final Image
