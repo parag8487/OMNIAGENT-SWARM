@@ -1,0 +1,83 @@
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#6366f1', 'primaryTextColor': '#f8fafc', 'primaryBorderColor': '#818cf8', 'lineColor': '#64748b', 'secondaryColor': '#1e293b', 'tertiaryColor': '#0f172a', 'fontSize': '13px', 'fontFamily': 'Inter, Segoe UI, sans-serif'}, 'flowchart': {'curve': 'basis', 'padding': 16, 'nodeSpacing': 20, 'rankSpacing': 50}}}%%
+
+flowchart LR
+    subgraph CLIENT["🖥️ FRONTEND — Vue.js 3 + Vite"]
+        FE1["Vue Router"]
+        FE2["D3.js Graph"]
+        FE3["Step 1–5 UI"]
+        FE4["Axios Client"]
+    end
+
+    subgraph API["⚡ REST API — Flask"]
+        API1["/api/graph/*"]
+        API2["/api/simulation/*"]
+        API3["/api/report/*"]
+    end
+
+    subgraph SERVICES["⚙️ SERVICE LAYER"]
+        SVC1["OntologyGenerator"]
+        SVC2["GraphBuilder"]
+        SVC3["ProfileGenerator"]
+        SVC4["SimManager"]
+        SVC5["ReportAgent"]
+        SVC6["MemoryUpdater"]
+    end
+
+    subgraph TOOLS["🔧 REPORT TOOLS"]
+        T1["InsightForge"]
+        T2["PanoramaSearch"]
+        T3["QuickSearch"]
+        T4["InterviewAgent"]
+    end
+
+    subgraph EXTERNAL["☁️ EXTERNAL SERVICES"]
+        EX1["LLM Provider<br/>Gemini · OpenAI · Qwen"]
+        EX2["Zep Cloud<br/>GraphRAG · Memory"]
+        EX3["OASIS Engine<br/>Twitter + Reddit Sim"]
+    end
+
+    subgraph INFRA["🏗️ DEPLOYMENT"]
+        INF1["Docker Container"]
+        INF2["Google Cloud Run"]
+        INF3[".env Secrets"]
+    end
+
+    FE4 -->|"HTTP/JSON"| API1
+    FE4 -->|"HTTP/JSON"| API2
+    FE4 -->|"HTTP/JSON"| API3
+
+    API1 --> SVC1
+    API1 --> SVC2
+    API2 --> SVC3
+    API2 --> SVC4
+    API3 --> SVC5
+    SVC4 --> SVC6
+
+    SVC5 --> T1
+    SVC5 --> T2
+    SVC5 --> T3
+    SVC5 --> T4
+
+    SVC1 -->|"Chat API"| EX1
+    SVC3 -->|"Chat API"| EX1
+    SVC5 -->|"Chat API"| EX1
+    SVC2 -->|"Graph API"| EX2
+    SVC6 -->|"Episodes"| EX2
+    SVC4 -->|"Subprocess"| EX3
+
+    T1 -->|"Search"| EX2
+    T2 -->|"Search"| EX2
+    T3 -->|"Search"| EX2
+    T4 -->|"Interview"| EX3
+
+    INF3 -.-> INF1
+    INF1 -.-> INF2
+
+    classDef default fill:#1e293b,stroke:#334155,stroke-width:1px,color:#e2e8f0
+
+    style CLIENT fill:#0f172a,stroke:#6366f1,stroke-width:2px,color:#c7d2fe
+    style API fill:#0f172a,stroke:#3b82f6,stroke-width:2px,color:#bfdbfe
+    style SERVICES fill:#0f172a,stroke:#8b5cf6,stroke-width:2px,color:#ddd6fe
+    style TOOLS fill:#0f172a,stroke:#ec4899,stroke-width:2px,color:#fbcfe8
+    style EXTERNAL fill:#0f172a,stroke:#f59e0b,stroke-width:2px,color:#fde68a
+    style INFRA fill:#0f172a,stroke:#10b981,stroke-width:2px,color:#a7f3d0

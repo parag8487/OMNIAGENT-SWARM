@@ -1,0 +1,53 @@
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#6366f1', 'primaryTextColor': '#f8fafc', 'primaryBorderColor': '#818cf8', 'lineColor': '#94a3b8', 'secondaryColor': '#1e293b', 'tertiaryColor': '#0f172a', 'fontSize': '14px', 'fontFamily': 'Inter, Segoe UI, sans-serif'}, 'flowchart': {'curve': 'basis', 'padding': 20, 'nodeSpacing': 30, 'rankSpacing': 60}}}%%
+
+flowchart LR
+    INPUT(("📄<br/>Document<br/>Upload")):::input
+
+    subgraph P1["① GRAPH BUILD"]
+        A1["Ontology<br/>Generation"]
+        A2["Text<br/>Chunking"]
+        A3["GraphRAG<br/>Construction"]
+        A1 --> A2 --> A3
+    end
+
+    subgraph P2["② ENV SETUP"]
+        B1["Entity<br/>Extraction"]
+        B2["Persona<br/>Generation"]
+        B3["Platform<br/>Config"]
+        B1 --> B2 --> B3
+    end
+
+    subgraph P3["③ SIMULATION"]
+        C1["OASIS Engine<br/>Twitter + Reddit"]
+        C2["Agent Actions<br/>Post · Like · Reply"]
+        C3["Graph Memory<br/>Real-Time Update"]
+        C1 --> C2 --> C3
+    end
+
+    subgraph P4["④ REPORT"]
+        D1["Outline<br/>Planning"]
+        D2["ReACT Loop<br/>+ Tool Calls"]
+        D3["Prediction<br/>Report"]
+        D1 --> D2 --> D3
+    end
+
+    subgraph P5["⑤ INTERACTION"]
+        E1["Chat with<br/>Report Agent"]
+        E2["Chat with<br/>Any Agent"]
+        E3["Group<br/>Surveys"]
+    end
+
+    INPUT --> P1
+    P1 --> P2
+    P2 --> P3
+    P3 --> P4
+    P4 --> P5
+
+    classDef input fill:#6366f1,stroke:#818cf8,stroke-width:2px,color:#fff,font-weight:bold
+    classDef default fill:#1e293b,stroke:#334155,stroke-width:1px,color:#e2e8f0
+    
+    style P1 fill:#0f172a,stroke:#6366f1,stroke-width:2px,color:#c7d2fe
+    style P2 fill:#0f172a,stroke:#3b82f6,stroke-width:2px,color:#bfdbfe
+    style P3 fill:#0f172a,stroke:#8b5cf6,stroke-width:2px,color:#ddd6fe
+    style P4 fill:#0f172a,stroke:#06b6d4,stroke-width:2px,color:#cffafe
+    style P5 fill:#0f172a,stroke:#10b981,stroke-width:2px,color:#a7f3d0

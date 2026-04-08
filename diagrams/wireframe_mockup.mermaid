@@ -1,0 +1,55 @@
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#6366f1', 'primaryTextColor': '#f8fafc', 'primaryBorderColor': '#818cf8', 'lineColor': '#64748b', 'secondaryColor': '#1e293b', 'tertiaryColor': '#0f172a', 'fontSize': '13px', 'fontFamily': 'Inter, Segoe UI, sans-serif'}, 'flowchart': {'curve': 'basis', 'padding': 16, 'nodeSpacing': 20, 'rankSpacing': 50}}}%%
+
+flowchart LR
+    subgraph S1["🏠 HOME"]
+        S1A["Landing Page<br/>+ Hero Section"]
+        S1B["File Upload<br/>Drop Zone"]
+        S1C["Simulation<br/>Prompt Input"]
+        S1D["▶ Start Engine"]
+        S1A --> S1B --> S1C --> S1D
+    end
+
+    subgraph S2["📊 GRAPH BUILD  — Step 1"]
+        S2A["D3.js Force<br/>Graph View"]
+        S2B["Ontology Status<br/>+ Schema Info"]
+        S2C["Entity &<br/>Relation Counters"]
+        S2D["→ Env Setup"]
+        S2A --> S2B --> S2C --> S2D
+    end
+
+    subgraph S3["⚙️ ENV SETUP  — Step 2"]
+        S3A["Agent Persona<br/>Card Grid"]
+        S3B["Platform Config<br/>& Time Flow"]
+        S3C["Rounds Slider<br/>+ Duration"]
+        S3D["▶ Start Sim"]
+        S3A --> S3B --> S3C --> S3D
+    end
+
+    subgraph S4["🔄 SIMULATION  — Step 3–4"]
+        S4A["Live Graph<br/>View (30s update)"]
+        S4B["Agent Action<br/>Log Stream"]
+        S4C["Progress Bar<br/>Round N / Total"]
+        S4D["📊 Generate<br/>Report"]
+        S4A --> S4B --> S4C --> S4D
+    end
+
+    subgraph S5["💬 INTERACTION  — Step 5"]
+        S5A["Report Agent<br/>Chat Panel"]
+        S5B["Agent Selector<br/>+ Individual Chat"]
+        S5C["Survey Builder<br/>+ Results"]
+        S5D["Tool Usage<br/>Indicators"]
+        S5A --> S5B --> S5C --> S5D
+    end
+
+    S1 ==>|"Start"| S2
+    S2 ==>|"Build Complete"| S3
+    S3 ==>|"Configure"| S4
+    S4 ==>|"Simulation Done"| S5
+
+    classDef default fill:#1e293b,stroke:#334155,stroke-width:1px,color:#e2e8f0
+
+    style S1 fill:#0f172a,stroke:#6366f1,stroke-width:2px,color:#c7d2fe
+    style S2 fill:#0f172a,stroke:#3b82f6,stroke-width:2px,color:#bfdbfe
+    style S3 fill:#0f172a,stroke:#8b5cf6,stroke-width:2px,color:#ddd6fe
+    style S4 fill:#0f172a,stroke:#06b6d4,stroke-width:2px,color:#cffafe
+    style S5 fill:#0f172a,stroke:#10b981,stroke-width:2px,color:#a7f3d0
