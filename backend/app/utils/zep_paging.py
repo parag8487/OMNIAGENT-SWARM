@@ -1,4 +1,4 @@
-"""Zep Graph 分页读取工具。
+﻿"""Zep Graph 分页读取工具。
 
 Zep 的 node/edge 列表接口使用 UUID cursor 分页，
 本模块封装自动翻页逻辑（含单页重试），对调用方透明地返回完整列表。
@@ -17,7 +17,7 @@ from zep_cloud.client import Zep
 from .logger import get_logger
 from ..config import Config
 
-logger = get_logger('mirofish.zep_paging')
+logger = get_logger('omniagent.zep_paging')
 
 _DEFAULT_PAGE_SIZE = 100
 _MAX_NODES = 2000

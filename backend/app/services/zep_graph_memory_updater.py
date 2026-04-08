@@ -1,4 +1,4 @@
-"""
+﻿"""
 Zep图谱记忆更新服务
 将模拟中的Agent活动动态更新到Zep图谱中
 """
@@ -18,7 +18,7 @@ from ..config import Config
 from ..utils.logger import get_logger
 from ..utils.locale import get_locale, set_locale
 
-logger = get_logger('mirofish.zep_graph_memory_updater')
+logger = get_logger('omniagent.zep_graph_memory_updater')
 
 
 @dataclass

@@ -1,4 +1,4 @@
-"""
+﻿"""
 OASIS Agent Profile生成器
 将Zep图谱中的实体转换为OASIS模拟平台所需的Agent Profile格式
 
@@ -23,7 +23,7 @@ from ..utils.logger import get_logger
 from ..utils.locale import get_language_instruction, get_locale, set_locale, t
 from .zep_entity_reader import EntityNode, ZepEntityReader
 
-logger = get_logger('mirofish.oasis_profile')
+logger = get_logger('omniagent.oasis_profile')
 
 
 @dataclass

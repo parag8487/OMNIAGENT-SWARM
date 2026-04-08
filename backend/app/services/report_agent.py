@@ -1,4 +1,4 @@
-"""
+﻿"""
 Report Agent Service
 Implementation of ReACT-style simulation report generation using LangChain + Zep.
 
@@ -353,8 +353,8 @@ class ReportConsoleLogger:
         
         # 添加到 report_agent 相关的 logger
         loggers_to_attach = [
-            'mirofish.report_agent',
-            'mirofish.zep_tools',
+            'omniagent.report_agent',
+            'omniagent.zep_tools',
         ]
         
         for logger_name in loggers_to_attach:
@@ -369,8 +369,8 @@ class ReportConsoleLogger:
         
         if self._file_handler:
             loggers_to_detach = [
-                'mirofish.report_agent',
-                'mirofish.zep_tools',
+                'omniagent.report_agent',
+                'omniagent.zep_tools',
             ]
             
             for logger_name in loggers_to_detach:

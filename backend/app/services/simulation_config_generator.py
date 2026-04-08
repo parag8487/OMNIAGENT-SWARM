@@ -1,4 +1,4 @@
-"""
+﻿"""
 模拟配置智能生成器
 使用LLM根据模拟需求、文档内容、图谱信息自动生成细致的模拟参数
 实现全程自动化，无需人工设置参数
@@ -23,7 +23,7 @@ from ..utils.logger import get_logger
 from ..utils.locale import get_language_instruction, t
 from .zep_entity_reader import EntityNode, ZepEntityReader
 
-logger = get_logger('mirofish.simulation_config')
+logger = get_logger('omniagent.simulation_config')
 
 # 中国作息时间配置（北京时间）
 CHINA_TIMEZONE_CONFIG = {
